@@ -5,7 +5,7 @@ import type { AnchorHTMLAttributes, MouseEvent, ReactNode } from "react";
 import { useRef } from "react";
 import { cn } from "@/lib/cn";
 
-type MagneticButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
+type MagneticButtonProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "onAnimationStart" | "onDrag" | "onDragStart" | "onDragEnd"> & {
   children: ReactNode;
   variant?: "primary" | "secondary" | "ghost";
 };
