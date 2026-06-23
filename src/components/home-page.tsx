@@ -435,7 +435,7 @@ function ServicesSection() {
               className="max-w-3xl font-display text-5xl font-medium leading-[0.98] tracking-[-0.055em] text-nodo-text sm:text-6xl lg:text-7xl"
             />
             <p className="max-w-2xl text-lg leading-8 text-nodo-muted/80">
-              Studio Nodo nasce per attività locali che hanno qualità, atmosfera e valore, ma online vengono percepite meno di quanto meritano. Il lavoro è unire estetica, messaggio e conversione in un'unica esperienza coerente.
+              Studio Nodo nasce per attività locali che hanno qualità, atmosfera e valore, ma online vengono percepite meno di quanto meritano. Il lavoro è unire estetica, messaggio e conversione in un&apos;unica esperienza coerente.
             </p>
           </div>
         </Reveal>
@@ -680,7 +680,7 @@ function PhilosophySection() {
         <Reveal>
           <SectionLabel>Perché Studio Nodo</SectionLabel>
           <h2 className="font-display text-4xl font-medium leading-[1.05] tracking-[-0.055em] text-nodo-text sm:text-5xl lg:text-7xl">
-            Le attività locali meritano una presenza digitale all'altezza della loro esperienza reale.
+            Le attività locali meritano una presenza digitale all&apos;altezza della loro esperienza reale.
           </h2>
         </Reveal>
         <div className="space-y-0 lg:pt-28">
@@ -751,7 +751,7 @@ function ComboSection() {
             <Reveal>
               <SectionLabel>Sito web + Social</SectionLabel>
               <h2 className="font-display text-5xl font-medium leading-[0.95] tracking-[-0.055em] text-nodo-text sm:text-6xl">
-                TikTok accende l'attenzione. Il sito chiude il cerchio.
+                TikTok accende l&apos;attenzione. Il sito chiude il cerchio.
               </h2>
               <p className="mt-7 max-w-xl text-lg leading-8 text-nodo-muted/80">
                 TikTok è il social n.1 oggi: genera più visibilità di qualsiasi altra piattaforma. Ma una persona pronta a scegliere cerca conferme: servizi, atmosfera, dettagli, contatti, chiarezza. Il sito diventa il luogo in cui la fiducia prende forma.
@@ -976,7 +976,7 @@ function FinalCta() {
                   className="max-w-4xl font-display text-5xl font-medium leading-[1.0] tracking-[-0.065em] text-nodo-text sm:text-6xl lg:text-7xl"
                 />
                 <p className="mt-8 max-w-2xl text-lg leading-8 text-nodo-muted/80">
-                  Se hai un'attività locale e vuoi che la tua presenza online comunichi lo stesso valore che le persone vivono dal vivo, iniziamo da una conversazione semplice.
+                  Se hai un&apos;attività locale e vuoi che la tua presenza online comunichi lo stesso valore che le persone vivono dal vivo, iniziamo da una conversazione semplice.
                 </p>
                 <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                   <MagneticButton href="https://wa.me/393450494432">
