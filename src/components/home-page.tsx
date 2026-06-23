@@ -226,8 +226,35 @@ function Header() {
 function Hero() {
   return (
     <section id="home" className="relative flex min-h-screen items-center overflow-hidden px-5 pb-28 pt-36 sm:px-8 lg:px-10">
+      {/* Glow orbs */}
+      <motion.div
+        className="pointer-events-none absolute left-[5%] top-[20%] h-[400px] w-[400px] rounded-full bg-emerald-500/[0.07] blur-[130px]"
+        animate={{ scale: [1, 1.2, 1], opacity: [0.4, 0.7, 0.4] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="pointer-events-none absolute right-[8%] top-[30%] h-[350px] w-[350px] rounded-full bg-rose-500/[0.06] blur-[120px]"
+        animate={{ scale: [1, 1.15, 1], opacity: [0.5, 0.8, 0.5] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+      />
+      <motion.div
+        className="pointer-events-none absolute bottom-[10%] left-1/2 h-[300px] w-[300px] -translate-x-1/2 rounded-full bg-sky-500/[0.05] blur-[100px]"
+        animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.6, 0.3] }}
+        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+      />
+
+      {/* Griglia futuristica */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: "linear-gradient(rgba(167,183,158,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(167,183,158,0.5) 1px, transparent 1px)",
+          backgroundSize: "80px 80px"
+        }}
+      />
+
       <div className="relative z-10 mx-auto w-full max-w-7xl">
         <div className="max-w-4xl">
+          {/* Badge */}
           <motion.div
             className="mb-8 inline-flex max-w-full items-center gap-2.5 rounded-full border border-white/[0.1] py-2 pl-2 pr-4 text-[0.6rem] uppercase tracking-micro backdrop-blur-2xl sm:pr-5 sm:text-[0.64rem]"
             style={{ background: "linear-gradient(135deg, rgba(131,24,67,0.12), rgba(30,34,41,0.6), rgba(6,78,59,0.12))" }}
@@ -251,22 +278,28 @@ function Hero() {
               <span className="hidden text-nodo-muted sm:inline">Brand digitale freelance</span>
             </span>
           </motion.div>
+
+          {/* Headline */}
           <RevealText
             as="h1"
             text="Crescita digitale per attività che vogliono distinguersi."
-            className="text-balance font-display text-[clamp(3.2rem,8vw,7.2rem)] font-medium leading-[0.98] tracking-[-0.065em]"
+            className="text-balance font-display text-[clamp(2.8rem,8vw,7.2rem)] font-medium leading-[0.98] tracking-[-0.065em]"
             wordClassName="text-gradient-luxe"
             delay={0.15}
             stagger={0.06}
           />
+
+          {/* Sottotitolo con accent */}
           <motion.p
             className="mt-8 max-w-xl text-lg leading-8 text-nodo-muted/90 sm:text-xl sm:leading-9"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.85, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}
           >
-            Strategia, contenuti TikTok e siti web progettati per trasformare attenzione in clienti.
+            Strategia, contenuti <span className="font-medium text-rose-400">TikTok</span> e siti web progettati per trasformare attenzione in clienti.
           </motion.p>
+
+          {/* CTA buttons */}
           <motion.div
             className="mt-10 flex flex-col gap-4 sm:flex-row"
             initial={{ opacity: 0, y: 24 }}
@@ -275,36 +308,62 @@ function Hero() {
           >
             <MagneticButton href="tel:+393450494432">
               Prenota una consulenza
-              <ArrowRight className="h-4 w-4" />
+              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </MagneticButton>
             <MagneticButton href="#metodo" variant="secondary">
               Scopri il metodo
-              <MousePointer2 className="h-4 w-4" />
+              <MousePointer2 className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
             </MagneticButton>
           </motion.div>
+
+          {/* Stat cards con icone e colori */}
           <motion.div
-            className="mt-12 grid max-w-md grid-cols-3 gap-3 border-t border-white/[0.08] pt-7"
+            className="mt-14 grid max-w-lg grid-cols-3 gap-3 sm:gap-4"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.85, delay: 0.62, ease: [0.22, 1, 0.36, 1] }}
           >
             {[
-              ["TikTok", "visibilità"],
-              ["Siti web", "conversione"],
-              ["Contenuti", "fiducia"]
-            ].map(([title, subtitle]) => (
-              <div key={title} className="group relative overflow-hidden rounded-xl border border-white/[0.06] p-3 transition-all duration-300 hover:border-nodo-accent/30 hover:bg-white/[0.03]">
-                <div className="absolute -right-4 -top-4 h-12 w-12 rounded-full bg-nodo-accent/[0.08] blur-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                <p className="relative text-[0.65rem] uppercase tracking-[0.18em] text-nodo-accent">{title}</p>
-                <p className="relative mt-2 text-sm text-nodo-muted/60">{subtitle}</p>
-              </div>
-            ))}
+              { title: "TikTok", subtitle: "visibilità", icon: TikTokIcon, color: "rose", glow: "rgba(251,113,133,0.15)" },
+              { title: "Siti web", subtitle: "conversione", icon: Layers3, color: "sky", glow: "rgba(56,189,248,0.15)" },
+              { title: "Contenuti", subtitle: "fiducia", icon: Target, color: "emerald", glow: "rgba(52,211,153,0.15)" }
+            ].map((stat, index) => {
+              const c = colorMap[stat.color];
+              const Icon = stat.icon;
+              return (
+                <motion.div
+                  key={stat.title}
+                  className="group relative overflow-hidden rounded-2xl border p-4 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1"
+                  style={{ background: `linear-gradient(160deg, ${stat.color === 'emerald' ? 'rgba(6,78,59,0.15)' : stat.color === 'rose' ? 'rgba(131,24,67,0.15)' : 'rgba(12,74,110,0.15)'}, rgba(30,34,41,0.6))` }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.7 + index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <div className={cn("absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r to-transparent", c.gradient)} />
+                  <div className={cn("absolute -right-4 -top-4 h-16 w-16 rounded-full blur-2xl opacity-30 transition-opacity duration-300 group-hover:opacity-60", c.bg)} />
+                  <div className={cn("relative mb-3 flex h-9 w-9 items-center justify-center rounded-xl border transition-transform duration-300 group-hover:scale-110", c.border, c.bg, c.text)}>
+                    <Icon className="h-4 w-4" />
+                  </div>
+                  <p className={cn("relative text-[0.65rem] font-semibold uppercase tracking-[0.18em]", c.text)}>{stat.title}</p>
+                  <p className="relative mt-1.5 text-sm text-nodo-muted/60">{stat.subtitle}</p>
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
       </div>
+
+      {/* Linea decorativa laterale */}
+      <div className="pointer-events-none absolute left-5 top-1/2 hidden -translate-y-1/2 flex-col items-center gap-2 lg:flex">
+        <div className="h-20 w-px bg-gradient-to-b from-transparent via-emerald-400/30 to-transparent" />
+        <span className="text-[0.5rem] uppercase tracking-[0.3em] text-nodo-muted/40 [writing-mode:vertical-rl]">Studio Nodo</span>
+        <div className="h-20 w-px bg-gradient-to-b from-transparent via-rose-400/30 to-transparent" />
+      </div>
+
+      {/* Scroll indicator */}
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-10 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-3 sm:flex"
+        className="pointer-events-none absolute bottom-8 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-3 sm:flex"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
@@ -312,7 +371,7 @@ function Hero() {
         <span className="text-[0.58rem] uppercase tracking-[0.3em] text-nodo-muted/60">Scroll</span>
         <span className="relative h-12 w-px overflow-hidden bg-white/10">
           <motion.span
-            className="absolute inset-x-0 top-0 h-4 bg-nodo-accent"
+            className="absolute inset-x-0 top-0 h-4 bg-gradient-to-b from-emerald-400 to-transparent"
             animate={{ y: [-16, 48] }}
             transition={{ duration: 1.9, repeat: Infinity, ease: "easeInOut" }}
           />
