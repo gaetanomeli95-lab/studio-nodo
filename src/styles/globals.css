@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  background: transparent;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: transparent;
+  scroll-behavior: smooth;
+  text-rendering: geometricPrecision;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: transparent;
+  color: #F5F5F2;
+  cursor: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.8'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+::selection {
+  background: #A7B79E;
+  color: #111419;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1E2229;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(167, 183, 158, 0.42);
+  border: 3px solid #1E2229;
+  border-radius: 999px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-gradient-luxe {
+  background-image: linear-gradient(112deg, #ffffff 0%, #f5f5f2 34%, #d5d1c8 66%, #a7b79e 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.mask-fade-top {
+  -webkit-mask-image: linear-gradient(to top, #000 58%, transparent 100%);
+  mask-image: linear-gradient(to top, #000 58%, transparent 100%);
+}
+
+.lux-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(140deg, rgba(167, 183, 158, 0.6), rgba(255, 255, 255, 0.07) 44%, transparent 72%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.lux-border:hover::before,
+.group:hover .lux-border::before {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Studio Nodo",
+  "short_name": "Studio Nodo",
+  "description": "Crescita digitale premium per attività locali a Palermo.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1E2229",
+  "theme_color": "#1E2229",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "64x64",
+      "type": "image/svg+xml"
+    }
+  ]
+}
